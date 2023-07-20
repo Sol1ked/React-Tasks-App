@@ -4,11 +4,7 @@ import Tasks from "../components/tasks/Tasks";
 import TasksBottom from "../components/tasksBottom/tasksBottom";
 
 const HomePage = () => {
-    const [tasks, setTasks] = useState([
-        {id: 1, title: 'Поиграть в валик', price: 1000},
-        {id: 2, title: 'Купить чипсики', price: 10},
-        {id: 3, title: 'Зайти в дс', price: 100},
-    ])
+    const [tasks, setTasks] = useState([])
     const [error, setError] = useState(false)
     const [task, setTask] = useState({
         title: '', price: ''
@@ -67,12 +63,12 @@ const HomePage = () => {
                 />
                 <Tasks
                     tasks={tasks}
-                    editingTaskId={editingTaskId}
-                    handleSaveTask={handleSaveTask}
                     handleEditTaskTitle={handleEditTaskTitle}
                     handleEditTaskPrice={handleEditTaskPrice}
-                    handleInputChange={handleInputChange}
+                    handleSaveTask={handleSaveTask}
                     handleRemoveTask={handleRemoveTask}
+                    editingTaskId={editingTaskId}
+                    handleInputChange={handleInputChange}
                 />
                 <TasksBottom
                     totalPrice={totalPrice}
